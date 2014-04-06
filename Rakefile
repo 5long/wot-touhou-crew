@@ -11,7 +11,7 @@ task :build => :prep do
 end
 
 task :clean do
-  rm_rf "build", "touhou-crew.zip"
+  rm_rf %w(build touhou-crew.zip)
 end
 
 task :zip do
