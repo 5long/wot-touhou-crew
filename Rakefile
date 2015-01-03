@@ -11,6 +11,7 @@ end
 desc "build mod from scheme"
 task :build => :prep do
   scheme = Scheme.load_from_yaml("scheme.yaml")
+  scheme.validate!
   scheme.build("build")
 end
 

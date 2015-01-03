@@ -38,4 +38,8 @@ class Scheme < Struct.new(:countries)
   def ln_f old, new
     ln old, new, force: true
   end
+
+  def validate!
+    countries.each {|c| c.validate!}
+  end
 end
