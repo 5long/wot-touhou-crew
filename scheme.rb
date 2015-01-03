@@ -29,6 +29,7 @@ class Scheme < Struct.new(:countries)
 
   def build_country c
     c.shojos.each_with_index do |shojo, i|
+      next if shojo.empty?
       ln_f shojo.pic_big, "big/#{c.name}-#{i + 1}.png"
       ln_f shojo.pic_small, "small/#{c.name}-#{i + 1}.png"
       ln_f shojo.pic_barracks, "barracks/#{c.name}-#{i + 1}.png"
